@@ -10,15 +10,15 @@ import datetime
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-req = Request('http://10.192.40.29/admin/user?uid=heru&display-name=heru',
-            method = 'PUT')
+req = Request('http://10.192.40.29/admin/user?uid=eleme&display-name=eleme.modify',
+            method = 'POST')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr) 
 
 hstr = ''
-hstr += 'PUT\n'
+hstr += 'POST\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'

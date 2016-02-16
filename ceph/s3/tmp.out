@@ -1,0 +1,17 @@
+{
+    "caps": [],
+    "display_name": "eleme",
+    "email": "",
+    "keys": [
+        {
+            "access_key": "RI5C7LCZFFBMWG8SV7Y9",
+            "secret_key": "V6CEK4j7quJWQV6k0LwEjG3fkHjtAN2c9Xy2vc5j",
+            "user": "eleme"
+        }
+    ],
+    "max_buckets": 1000,
+    "subusers": [],
+    "suspended": 0,
+    "swift_keys": [],
+    "user_id": "eleme"
+}
