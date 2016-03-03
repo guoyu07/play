@@ -10,7 +10,7 @@ import datetime
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-req = Request('https://10.192.40.29/admin/user?uid=eleme',
+req = Request('http://10.192.40.29/admin/user?uid=eleme',
             method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
