@@ -10,29 +10,26 @@ import datetime
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-content = bytes('hello', 'utf-8')
+# get content of this file
+bigfile = None
+with open('./bigfile', 'r') as f:
+    bigfile = bytes(f.read(), 'utf-8')
 
-req = Request('http://10.192.40.29/disk/name00', data=content,
+req = Request('http://10.192.40.29/disk/bigfile02', data=bytes(),
             method = 'PUT')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
-# req.add_header('x-amz-acl', 'public-read-write')
-m = hashlib.md5()
-m.update(content)
-md5value = base64.b64encode(m.digest()).decode('utf-8')
-
-req.add_header('Content-Type', 'text/plain')
-req.add_header('Content-MD5', md5value)
+req.add_header('x-amz-acl', 'public-read-write')
 
 hstr = ''
 hstr += 'PUT\n'
-hstr += md5value + '\n'
-hstr += 'text/plain\n'
+hstr += '\n'
+hstr += '\n'
 hstr += timestr + '\n'
-# hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/disk/name00'
+hstr += 'x-amz-acl:public-read-write\n'
+hstr += '/disk/bigfile01'
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')
