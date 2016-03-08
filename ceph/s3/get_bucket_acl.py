@@ -10,7 +10,7 @@ import datetime
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-req = Request('http://10.192.40.29/disk?acl',
+req = Request('http://10.192.40.29/public?acl',
             method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -23,7 +23,7 @@ hstr += 'GET\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
-hstr += '/disk?acl'
+hstr += '/public?acl'
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

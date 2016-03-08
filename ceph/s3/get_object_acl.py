@@ -35,7 +35,7 @@ hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
 # hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/public/' + name
+hstr += '/public/' + name + '?acl'
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')
