@@ -7,34 +7,34 @@ import hashlib
 import base64 
 import datetime
 
-name, content = input().split()
+#name, content = input().split()
+name = 'dir1/.'
 
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-content = bytes(content, 'utf-8')
+#content = bytes(content, 'utf-8')
 
-req = Request('http://10.192.40.29/disk/' + name, data=content,
-            method = 'PUT')
+req = Request('http://10.192.40.29/disk/' + name,
+            method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
-req.add_header('x-amz-acl', 'public-read-write')
+# req.add_header('x-amz-acl', 'public-read-write')
+#m = hashlib.md5()
+#m.update(content)
+#md5value = base64.b64encode(m.digest()).decode('utf-8')
 
-m = hashlib.md5()
-m.update(content)
-md5value = base64.b64encode(m.digest()).decode('utf-8')
-
-req.add_header('Content-Type', 'text/plain')
-req.add_header('Content-MD5', md5value)
+#req.add_header('Content-Type', 'text/plain')
+#req.add_header('Content-MD5', md5value)
 
 hstr = ''
-hstr += 'PUT\n'
-hstr += md5value + '\n'
-hstr += 'text/plain\n'
+hstr += 'GET\n'
+hstr += '\n'
+hstr += '\n'
 hstr += timestr + '\n'
-hstr += 'x-amz-acl:public-read-write\n'
+# hstr += 'x-amz-acl:public-read-write\n'
 hstr += '/disk/' + name
 print('hstr:%s' % (hstr,))
 
