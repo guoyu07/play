@@ -7,10 +7,12 @@ import hashlib
 import base64 
 import datetime
 
+bname = input()
+
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-req = Request('http://10.192.40.29/disk',
+req = Request('http://10.192.40.29/' + bname,
             method = 'PUT')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -24,7 +26,7 @@ hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
 hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/disk'
+hstr += '/' + bname
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')
