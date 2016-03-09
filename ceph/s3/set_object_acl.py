@@ -8,7 +8,7 @@ import base64
 import datetime
 
 #name, content = input().split()
-name = 'public_key'
+name = input()
 
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
@@ -18,7 +18,7 @@ with open('./acl.xml', 'r') as f:
     content = f.read()
 content = bytes(content, 'utf-8')
 
-req = Request('http://10.192.40.29/disk/' + name + '?acl', data = content,
+req = Request('http://10.192.40.29/public/' + name + '?acl', data = content,
             method = 'PUT')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -29,7 +29,7 @@ req.add_header('Date', timestr)
 #m.update(content)
 #md5value = base64.b64encode(m.digest()).decode('utf-8')
 
-req.add_header('Content-Type', 'text/xml')
+req.add_header('Content-Type', 'application/xml')
 req.add_header('Content-Length', str(len(content)))
 #req.add_header('Content-MD5', md5value)
 
@@ -38,9 +38,10 @@ hstr += 'PUT\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
+hstr += 'Content-Type: application/xml\n'  
 hstr += 'Content-Length: ' + str(len(content)) + '\n'
 # hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/disk/' + name
+hstr += '/public/' + name + '?acl'
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')
