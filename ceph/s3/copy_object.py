@@ -7,35 +7,35 @@ import hashlib
 import base64 
 import datetime
 
-name, content = input().split()
+dst_bkt, dst_obj, src_bkt, src_obj = input('target_bucket target_object source_bucket source object:\n').split()
 
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-content = bytes(content, 'utf-8')
-
-req = Request('http://10.192.40.29/disk/' + name, data=content,
+req = Request('http://10.192.40.29/' + dst_bkt + '/' + dst_obj, 
             method = 'PUT')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
 req.add_header('x-amz-acl', 'public-read-write')
+req.add_header('x-amz-copy-source', src_bkt + '/' + src_obj)
 
-m = hashlib.md5()
-m.update(content)
-md5value = base64.b64encode(m.digest()).decode('utf-8')
+#m = hashlib.md5()
+#m.update(content)
+#md5value = base64.b64encode(m.digest()).decode('utf-8')
 
-req.add_header('Content-Type', 'text/plain')
-req.add_header('Content-MD5', md5value)
+#req.add_header('Content-Type', 'text/plain')
+#req.add_header('Content-MD5', md5value)
 
 hstr = ''
 hstr += 'PUT\n'
-hstr += md5value + '\n'
-hstr += 'text/plain\n'
+hstr += '\n'
+hstr += '\n'
 hstr += timestr + '\n'
 hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/disk/' + name
+hstr += 'x-amz-copy-source:' + src_bkt + '/' + src_obj + '\n'
+hstr += '/' + dst_bkt + '/' + dst_obj
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

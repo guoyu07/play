@@ -8,7 +8,7 @@ import base64
 import datetime
 
 #name, content = input().split()
-name = 'name00'
+name = 'hello'
 
 access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'

@@ -7,7 +7,7 @@ import hashlib
 import base64 
 import datetime
 
-bname, oname = input().split()
+bname, oname = input('bname oname:\n').split()
 
 method = 'DELETE'
 # demouserid

@@ -15,7 +15,7 @@ secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
 #content = bytes(content, 'utf-8')
 
-req = Request('http://10.192.40.29/public/' + name + '?acl',
+req = Request('http://10.192.40.29/disk/' + name + '?acl',
             method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -35,7 +35,7 @@ hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
 # hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/public/' + name + '?acl'
+hstr += '/disk/' + name + '?acl'
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')
