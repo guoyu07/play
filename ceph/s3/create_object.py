@@ -7,14 +7,18 @@ import hashlib
 import base64 
 import datetime
 
-name, content = input().split()
+bname, name, content = input('bname name content:\n').split()
+# demouserid
+#access_key = 'Z2ETKC4RQFTR4XBQ1A72'
+#secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-access_key = 'Z2ETKC4RQFTR4XBQ1A72'
-secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
+#hr
+access_key = "9M3C3NCBEWSRDPRJGL0O"
+secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
 content = bytes(content, 'utf-8')
 
-req = Request('http://10.192.40.29/disk/' + name, data=content,
+req = Request('http://10.192.40.29/' + bname + '/' + name, data=content,
             method = 'PUT')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -35,7 +39,7 @@ hstr += md5value + '\n'
 hstr += 'text/plain\n'
 hstr += timestr + '\n'
 hstr += 'x-amz-acl:public-read-write\n'
-hstr += '/disk/' + name
+hstr += '/' + bname + '/'+ name
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

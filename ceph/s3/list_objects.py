@@ -7,10 +7,16 @@ import hashlib
 import base64 
 import datetime
 
-access_key = 'Z2ETKC4RQFTR4XBQ1A72'
-secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
+bname, pre, sep = input('bname pre sep:\n').split()
+# demouserid
+#access_key = 'Z2ETKC4RQFTR4XBQ1A72'
+#secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
-req = Request('http://10.192.40.29/disk?prefix=dir1/',
+# hr
+access_key = "9M3C3NCBEWSRDPRJGL0O"
+secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
+
+req = Request('http://10.192.40.29/' + bname + '?prefix='+ pre + '&delimiter=' + sep ,
             method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
@@ -22,7 +28,7 @@ hstr += 'GET\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
-hstr += '/disk'
+hstr += '/' + bname
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

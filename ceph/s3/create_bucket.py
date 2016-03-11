@@ -26,14 +26,14 @@ timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
-req.add_header('x-amz-acl', 'public-read-write')
+#req.add_header('x-amz-acl', 'public-read-write')
 
 hstr = ''
 hstr += 'PUT\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
-hstr += 'x-amz-acl:public-read-write\n'
+#hstr += 'x-amz-acl:public-read-write\n'
 hstr += '/' + bname
 print('hstr:%s' % (hstr,))
 

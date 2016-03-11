@@ -10,8 +10,12 @@ import datetime
 #name, content = input().split()
 bname, oname = input('bucket_name object_name:\n').split()
 
-access_key = 'Z2ETKC4RQFTR4XBQ1A72'
-secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
+# demouserid
+#access_key = 'Z2ETKC4RQFTR4XBQ1A72'
+#secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
+# hr
+access_key = "9M3C3NCBEWSRDPRJGL0O"
+secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
 #content = bytes(content, 'utf-8')
 
