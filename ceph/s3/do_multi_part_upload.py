@@ -7,7 +7,7 @@ import hashlib
 import base64 
 import datetime
 
-sbucket, sobject, dbucket, dobject = input('sbucket sobject dbucket dobject:\n').split()
+bkt, obj, part_id, upload_id = input('bucket object part_id upload_id\n').split() 
 # demouserid
 #access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 #secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
@@ -16,32 +16,40 @@ sbucket, sobject, dbucket, dobject = input('sbucket sobject dbucket dobject:\n')
 access_key = "9M3C3NCBEWSRDPRJGL0O"
 secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
-#content = bytes(content, 'utf-8')
+#eleme
+#access_key = 'VI8LSAC5JOFE99B066FC'
+#secret_key = 'm6ok1UbM+eTBqXXHRsAJ6PbUh3fmZDDfmOnHKk3M'
 
-req = Request('http://10.192.40.29/' + dbucket + '/' + dobject,
-            method = 'PUT')
+# make content
+
+content = None
+with open('5M', 'r') as fin:
+    content = fin.read()
+
+content = bytes(content, 'utf-8')
+
+req = Request('http://10.192.40.29/' + bkt + '/' + obj + '?partNumber=' + part_id + '&uploadId=' + upload_id, method = 'PUT', data=content)
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
 req.add_header('x-amz-acl', 'public-read-write')
-req.add_header('x-amz-copy-source', sbucket + '/' + sobject)
 
-#m = hashlib.md5()
-#m.update(content)
-#md5value = base64.b64encode(m.digest()).decode('utf-8')
+# md5 content
+m = hashlib.md5()
+m.update(content)
+md5value = base64.b64encode(m.digest()).decode('utf-8')
 
-#req.add_header('Content-Type', 'text/plain')
-#req.add_header('Content-MD5', md5value)
+req.add_header('Content-Type', 'text/plain')
+req.add_header('Content-MD5', md5value)
 
 hstr = ''
 hstr += 'PUT\n'
-hstr += '\n'
-hstr += '\n'
+hstr += md5value + '\n'
+hstr += 'text/plain\n'
 hstr += timestr + '\n'
 hstr += 'x-amz-acl:public-read-write\n'
-hstr += 'x-amz-copy-source:' + sbucket + '/' + sobject + '\n'
-hstr += '/' + dbucket + '/'+ dobject
+hstr += '/' + bkt + '/' + obj + '?partNumber=' + part_id + '&uploadId=' + upload_id
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

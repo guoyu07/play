@@ -7,7 +7,7 @@ import hashlib
 import base64 
 import datetime
 
-sbucket, sobject, dbucket, dobject = input('sbucket sobject dbucket dobject:\n').split()
+bkt, obj, upload_id = input('bucket object upload_id\n').split() 
 # demouserid
 #access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 #secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
@@ -16,17 +16,20 @@ sbucket, sobject, dbucket, dobject = input('sbucket sobject dbucket dobject:\n')
 access_key = "9M3C3NCBEWSRDPRJGL0O"
 secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
-#content = bytes(content, 'utf-8')
+#eleme
+#access_key = 'VI8LSAC5JOFE99B066FC'
+#secret_key = 'm6ok1UbM+eTBqXXHRsAJ6PbUh3fmZDDfmOnHKk3M'
 
-req = Request('http://10.192.40.29/' + dbucket + '/' + dobject,
-            method = 'PUT')
+
+req = Request('http://10.192.40.29/' + bkt + '/' + obj + '?uploadId=' + upload_id, 
+        method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 
 req.add_header('Host', '10.192.40.29')
 req.add_header('Date', timestr)
-req.add_header('x-amz-acl', 'public-read-write')
-req.add_header('x-amz-copy-source', sbucket + '/' + sobject)
+#req.add_header('x-amz-acl', 'public-read-write')
 
+# md5 content
 #m = hashlib.md5()
 #m.update(content)
 #md5value = base64.b64encode(m.digest()).decode('utf-8')
@@ -35,13 +38,12 @@ req.add_header('x-amz-copy-source', sbucket + '/' + sobject)
 #req.add_header('Content-MD5', md5value)
 
 hstr = ''
-hstr += 'PUT\n'
+hstr += 'GET\n'
 hstr += '\n'
 hstr += '\n'
 hstr += timestr + '\n'
-hstr += 'x-amz-acl:public-read-write\n'
-hstr += 'x-amz-copy-source:' + sbucket + '/' + sobject + '\n'
-hstr += '/' + dbucket + '/'+ dobject
+#hstr += 'x-amz-acl:public-read-write\n'
+hstr += '/' + bkt + '/' + obj + '?uploadId=' + upload_id
 print('hstr:%s' % (hstr,))
 
 key = bytearray(secret_key, 'utf-8')

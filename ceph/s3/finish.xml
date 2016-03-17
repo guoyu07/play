@@ -1,0 +1,14 @@
+<CompleteMultipartUpload>
+    <Part>
+        <PartNumber>1</PartNumber>
+        <ETag>41301fcd870caf029957d573b62283e1</ETag>
+    </Part>
+    <Part>
+        <PartNumber>2</PartNumber>
+        <ETag>41301fcd870caf029957d573b62283e1</ETag>
+    </Part>
+    <Part>
+        <PartNumber>3</PartNumber>
+        <ETag>41301fcd870caf029957d573b62283e1</ETag>
+    </Part>
+</CompleteMultipartUpload>
