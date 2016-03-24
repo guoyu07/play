@@ -17,6 +17,8 @@ bname, oname = input('bucket_name object_name:\n').split()
 access_key = "9M3C3NCBEWSRDPRJGL0O"
 secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
+#access_key = 'YG9YGNNYN46ARJH1MOEJ'
+#secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
 #content = bytes(content, 'utf-8')
 
 req = Request('http://10.192.40.29/' + bname + '/' + oname,
@@ -54,7 +56,7 @@ print('hres:%s' % (hres,))
 req.add_header('Authorization', 'AWS ' + access_key + ':' + hres)
 
 
-with urllib.request.urlopen(req) as f:
-    print(f.read().decode('utf-8'))
+with urllib.request.urlopen(req) as f, open('./2.jar', 'wb') as fout:
+    fout.write(f.read())
 
 
