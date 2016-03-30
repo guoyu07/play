@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Delete>
+<Quiet>true</Quiet>
+<Object>
+    <Key>key1</Key>
+</Object>
+<Object>
+    <Key>key2</Key>
+</Object>
+</Delete>

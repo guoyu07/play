@@ -1,14 +1,1 @@
-<CompleteMultipartUpload>
-    <Part>
-        <PartNumber>1</PartNumber>
-        <ETag>41301fcd870caf029957d573b62283e1</ETag>
-    </Part>
-    <Part>
-        <PartNumber>2</PartNumber>
-        <ETag>41301fcd870caf029957d573b62283e1</ETag>
-    </Part>
-    <Part>
-        <PartNumber>3</PartNumber>
-        <ETag>41301fcd870caf029957d573b62283e1</ETag>
-    </Part>
-</CompleteMultipartUpload>
+<CompleteMultipartUpload><Part><LastModified>2016-03-28T06:54:22.000Z</LastModified><PartNumber>1</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:25.000Z</LastModified><PartNumber>2</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:33.000Z</LastModified><PartNumber>3</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:37.000Z</LastModified><PartNumber>4</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:43.000Z</LastModified><PartNumber>5</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:48.000Z</LastModified><PartNumber>6</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:52.000Z</LastModified><PartNumber>7</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:54:57.000Z</LastModified><PartNumber>8</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part><Part><LastModified>2016-03-28T06:55:01.000Z</LastModified><PartNumber>9</PartNumber><ETag>41301fcd870caf029957d573b62283e1</ETag><Size>6000000</Size></Part></CompleteMultipartUpload>
