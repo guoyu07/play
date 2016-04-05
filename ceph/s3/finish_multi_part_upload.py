@@ -49,12 +49,12 @@ req.add_header('Date', timestr)
 
 #req.add_header('Content-Length', content_len)
 req.add_header('Content-Type', 'text/xml')
-#req.add_header('Content-MD5', md5value)
+req.add_header('Content-MD5', md5value)
 
 
 hstr = ''
 hstr += 'POST\n'
-hstr += '\n'
+hstr += md5value + '\n'
 hstr += 'text/xml\n'
 hstr += timestr + '\n'
 #hstr += 'Content-Type:' + content_len + '\n'
