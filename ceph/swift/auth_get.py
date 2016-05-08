@@ -28,7 +28,7 @@ key='J6X0gj6O4NOMGBPVKbW9Rde4Kx5Fb4ck0TeSJ1pN'
 #with open('./test03.xls', 'rb') as f:
 #    content = f.read()
 
-req = Request('http://172.16.6.78/auth', 
+req = Request('http://172.16.6.78/auth/v1', 
             method = 'GET')
 timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 

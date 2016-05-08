@@ -21,8 +21,7 @@ import sys
 
 # demo from local vcenter
 user = 'demo:swift'
-key='J6X0gj6O4NOMGBPVKbW9Rde4Kx5Fb4ck0TeSJ1pN'
-
+key = 'AUTH_rgwtk0a00000064656d6f3a737769667405c76213d8f0b9ed363630575fb9ba16581f0f8c9e47c897a41b24696fa9cf1a744d8de1'
 #content = None
 
 #with open('./test03.xls', 'rb') as f:
@@ -35,7 +34,7 @@ timestr = datetime.datetime.utcnow().strftime('%a, %d %b %Y %H:%M:%S GMT')
 req.add_header('Host', '172.16.6.78')
 req.add_header('Date', timestr)
 #req.add_header('x-amz-acl', 'public-read-write')
-req.add_header('X-Auth-Key', key)
+req.add_header('X-Auth-Token', key)
 
 
 
