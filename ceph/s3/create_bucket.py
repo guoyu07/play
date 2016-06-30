@@ -30,8 +30,13 @@ bname = sys.argv[2]
 #secret_key = 'm6ok1UbM+eTBqXXHRsAJ6PbUh3fmZDDfmOnHKk3M'
 
 # demo from local vcenter
-access_key = 'YG9YGNNYN46ARJH1MOEJ'
-secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+#access_key = 'YG9YGNNYN46ARJH1MOEJ'
+#secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+
+
+# demo from wx
+access_key = '73SAVVNQIIKSJCIFUDZF'
+secret_key = 'aZCMX8DwqSRIx4MgFbCctMNlyZTld28aeYhsDZYM'
 
 req = Request('http://' + host_port +'/' + bname,
             method = 'PUT')

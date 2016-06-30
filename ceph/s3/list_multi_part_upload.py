@@ -20,8 +20,12 @@ host, bkt, obj, upload_id = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 #secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
 
 # demo from local vcenter
-access_key = 'YG9YGNNYN46ARJH1MOEJ'
-secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+#access_key = 'YG9YGNNYN46ARJH1MOEJ'
+#secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+# demo from wx
+access_key = '73SAVVNQIIKSJCIFUDZF'
+secret_key = 'aZCMX8DwqSRIx4MgFbCctMNlyZTld28aeYhsDZYM'
+
 
 #hr
 #access_key = "9M3C3NCBEWSRDPRJGL0O"

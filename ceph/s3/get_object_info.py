@@ -12,10 +12,14 @@ if len(sys.argv) < 4:
     print('bad syntax, usage: {script_name} host bname oname')
 #name, content = input().split()
 host, bname, oname = sys.argv[1], sys.argv[2], sys.argv[3]
+# demo from wx
+access_key = '73SAVVNQIIKSJCIFUDZF'
+secret_key = 'aZCMX8DwqSRIx4MgFbCctMNlyZTld28aeYhsDZYM'
+
 
 # demo from local vcenter
-access_key = 'YG9YGNNYN46ARJH1MOEJ'
-secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+#access_key = 'YG9YGNNYN46ARJH1MOEJ'
+#secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
 
 #access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 #secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'

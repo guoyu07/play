@@ -11,10 +11,14 @@ bkt, obj, upload_id= input('bucket object upload_id\n').split()
 # demouserid
 #access_key = 'Z2ETKC4RQFTR4XBQ1A72'
 #secret_key = 'vqdQGtmruGW855mduffA8lsLx+ot9iXIb9QTtT2I'
+# demo from wx
+access_key = '73SAVVNQIIKSJCIFUDZF'
+secret_key = 'aZCMX8DwqSRIx4MgFbCctMNlyZTld28aeYhsDZYM'
+
 
 #hr
-access_key = "9M3C3NCBEWSRDPRJGL0O"
-secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
+#access_key = "9M3C3NCBEWSRDPRJGL0O"
+#secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
 #eleme
 #access_key = 'VI8LSAC5JOFE99B066FC'

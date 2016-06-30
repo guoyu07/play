@@ -25,8 +25,13 @@ host_port, bname, name, content = sys.argv[1], sys.argv[2], sys.argv[3], sys.arg
 #secret_key = "QCS0ju6dkqblLVQe966KwuE2Cg6cCfS/S2u2K+Qt"
 
 # demo from local vcenter
-access_key = 'YG9YGNNYN46ARJH1MOEJ'
-secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+#access_key = 'YG9YGNNYN46ARJH1MOEJ'
+#secret_key = 'mxzTzqF7XZx00hmy7n4qzUQ5mKinYywuRD2xV4ka'
+
+
+access_key = '73SAVVNQIIKSJCIFUDZF'
+secret_key = 'aZCMX8DwqSRIx4MgFbCctMNlyZTld28aeYhsDZYM'
+
 
 #content = None
 

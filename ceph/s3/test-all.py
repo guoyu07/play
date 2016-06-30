@@ -25,7 +25,8 @@ def make_fail(s):
     return bcolors.FAIL + s + bcolors.ENDC
 
 # global config
-api_host = '172.16.6.78'
+#api_host = '172.16.6.78'
+api_host = '10.192.11.9'
 
 
 def run_and_res(script_name, *args):
@@ -188,36 +189,3 @@ if res == '204':
 else:
     print(make_fail('[delete_bucket.py] FAILED!'))
     exit()
-
-# test show usage
-uid = 'demo'
-
-res = run_and_res('./get_usage.py', api_host, uid)
-
-if res == '200':
-    print(make_pass('[get_usage.py] PASS!'))
-else:
-    print(make_fail('[get_usage.py] FAILED!'))
-    exit()
-
-# test get bucket quota
-res = run_and_res('./get_bucket_quota.py', api_host, uid)
-
-if res == '200':
-    print(make_pass('[get_bucket_quota.py] PASS!'))
-else:
-    print(make_fail('[get_bucket_quota.py] FAILED!'))
-    exit()
-
-
-# test set bucket quota
-res = run_and_res('./set_bucket_quota.py', api_host, uid)
-
-if res == '200':
-    print(make_pass('[set_bucket_quota.py] PASS!'))
-else:
-    print(make_fail('[set_bucket_quota.py] FAILED!'))
-    exit()
-
-
-
